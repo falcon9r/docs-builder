@@ -1,23 +1,39 @@
 <script setup>
-import {computed, ref} from "vue";
-import {marked} from "marked";
+import { onMounted, ref } from "vue";
+import showdown from "../../../../lib/showdown";
+import markdownTheme from '../../../../assets/markdown.scss?inline';
+import highlightTheme from 'highlight.js/styles/atom-one-dark.css?inline';
 
-const html = ref('');
+console.log(markdownTheme);
 
-fetch("/index.md")
-    .then((response) => response.text())
-    .then((text) => {
-        html.value = text;
-    });
+const containerPreview = ref(null);
 
-const htmlContent = computed(() => marked(html.value))
+
+function createPreview(value) {
+  const content = showdown.makeHtml(value);
+  let contentContainer = `<div class="preview-content">${content}</div> ` + `<style>${highlightTheme}${markdownTheme}</style>`;
+  if (containerPreview.value) {
+    containerPreview.value.attachShadow({ mode: 'open' });
+    containerPreview.value.shadowRoot.innerHTML = contentContainer;
+  }
+}
+
+onMounted(() => {
+
+  fetch("/index.md")
+      .then((response) => response.text())
+      .then((text) => {
+          createPreview(text);
+      });
+});
+
 </script>
 
 <template>
-  <div v-html="htmlContent">
+  <div class="container preview-container" ref="containerPreview">
   </div>
 </template>
 
 <style scoped lang="css">
-
+/* Your CSS styles here */
 </style>
