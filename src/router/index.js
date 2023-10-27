@@ -1,18 +1,6 @@
-import DashboardView from "@/views/docs/DashboardView.vue";
 import {createRouter, createWebHistory} from "vue-router";
-import MarkedEditorTestView from "@/views/docs/editors/marked/MarkedEditorTestView.vue";
 
 const routes = [
-    {
-        path: '/',
-        name: 'default',
-        component: DashboardView
-    },
-    {
-        path: '/docs/test',
-        name: 'docs.editor.test',
-        component: MarkedEditorTestView
-    }
 ];
 
 const router = createRouter({
