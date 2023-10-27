@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.16",
+    "codemirror": "^5.62.2",
     "codemirror-editor-vue3": "^2.3.0",
     "highlight.js": "11.2.0",
     "marked": "^9.1.2",
@@ -16,7 +17,9 @@
     "showdown-twitter": "^1.1.0",
     "tailwindcss": "^3.3.5",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "@mdi/js": "^5.7.55",
+    "vue-mdijs": "0.5.12"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.4.0",
