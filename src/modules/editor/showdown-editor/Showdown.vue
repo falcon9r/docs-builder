@@ -8,6 +8,7 @@ const content = ref('');
 
 function onChange(event) {
   content.value = event;
+  localStorage.setItem('activeContent', event);
 }
 
 
