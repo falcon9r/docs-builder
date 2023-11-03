@@ -3,8 +3,10 @@ import NavToolbar from "@/components/editor/showdown-editor/NavToolbar.vue";
 import ShowdownPreview from "@/modules/editor/showdown-editor/ShowdownPreview.vue";
 import {ref} from "vue";
 import ShowdownEditor from "@/modules/editor/showdown-editor/ShowdownEditor.vue";
+import NavMenu from "@/components/editor/showdown-editor/NavMenu.vue";
 
-const content = ref('');
+
+const content = ref(localStorage.getItem('activeContent') ?? '');
 
 function onChange(event) {
   content.value = event;
@@ -16,6 +18,7 @@ function onChange(event) {
 
 <template>
   <NavToolbar />
+  <NavMenu />
   <div class="flex relative" style="height: calc(100vh - 64px);">
     <ShowdownEditor
         class="lg:w-6/12 w-full  bg-black h-full py-4"
