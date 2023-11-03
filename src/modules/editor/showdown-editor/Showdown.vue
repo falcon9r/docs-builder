@@ -3,7 +3,6 @@ import NavToolbar from "@/components/editor/showdown-editor/NavToolbar.vue";
 import ShowdownPreview from "@/modules/editor/showdown-editor/ShowdownPreview.vue";
 import {ref} from "vue";
 import ShowdownEditor from "@/modules/editor/showdown-editor/ShowdownEditor.vue";
-import NavMenu from "@/components/editor/showdown-editor/NavMenu.vue";
 
 
 const content = ref(localStorage.getItem('activeContent') ?? '');
