@@ -18,7 +18,6 @@ function onChange(event) {
 
 <template>
   <NavToolbar />
-  <NavMenu />
   <div class="flex relative" style="height: calc(100vh - 64px);">
     <ShowdownEditor
         class="lg:w-6/12 w-full  bg-black h-full py-4"
