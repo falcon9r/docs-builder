@@ -4,10 +4,12 @@ import ShowdownPreview from "@/modules/editor/showdown-editor/ShowdownPreview.vu
 import {ref} from "vue";
 import ShowdownEditor from "@/modules/editor/showdown-editor/ShowdownEditor.vue";
 
-const content = ref('');
+
+const content = ref(localStorage.getItem('activeContent') ?? '');
 
 function onChange(event) {
   content.value = event;
+  localStorage.setItem('activeContent', event);
 }
 
 
